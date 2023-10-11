@@ -1,1 +1,64 @@
 // Заголовки, загальні БЕМ блоки та інше...
+.block-text {
+
+	&__title {
+		color: #fff;
+      font-family: Urbanist;
+      font-size: toRem(46);
+      font-weight: 900;
+		line-height: 120%;
+		@media (max-width:$mobile){
+			font-size: toRem(28); 
+	  }
+	}
+
+	&__title--big {
+		color: #fff;
+      font-family: Urbanist;
+      font-size: toRem(78);
+      font-weight: 900;
+		line-height: 120%;
+		@media (max-width:$mobile){
+			font-size: toRem(40); 
+	  }
+	}
+
+	&__title--common {
+		color:#fff;
+      font-size: toRem(46);
+      font-weight: 900;
+		@media (max-width:$mobile){
+			font-size: toRem(28); 
+	  }
+	}
+
+	&__swipe {
+		color: #fff;
+      font-family: Urbanist;
+      font-size: toRem(20);
+      font-weight: 900;
+      line-height: 30px; /* 150% */
+	}
+
+	&__subtitle {
+		color: #fff;
+      font-family: Urbanist;
+      font-size: toRem(16);
+      font-weight: 400;
+      line-height: 150%; /* 150% */
+		@media (max-width:$mobile){
+			font-size: toRem(18); 
+	  }
+	}
+
+	&__subtitle--big {
+		color: #fff;
+      font-family: Urbanist;
+      font-size: toRem(20);
+      font-weight: 400;
+      line-height: 150%; /* 150% */
+	}
+	@media (max-width:$mobile){
+		font-size: toRem(18); 
+  }
+}
