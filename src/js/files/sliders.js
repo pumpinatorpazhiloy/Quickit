@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -18,13 +18,13 @@ EffectFade, Lazy, Manipulation
 
 // Стилі Swiper
 // Базові стилі
-import "../../scss/base/swiper.scss";
+ import "../../scss/base/swiper.scss";
 // Повний набір стилів з scss/libs/swiper.scss
 // import "../../scss/libs/swiper.scss";
 // Повний набір стилів з node_modules
 // import 'swiper/css';
 
-// Ініціалізація слайдерів
+// Ініціалізація слайдеріви
 function initSliders() {
 	// Список слайдерів
 	// Перевіряємо, чи є слайдер на сторінці
@@ -33,14 +33,94 @@ function initSliders() {
 		new Swiper('.swiper', { // Вказуємо склас потрібного слайдера
 			// Підключаємо модулі слайдера
 			// для конкретного випадку
-			modules: [Navigation],
+			modules: [Navigation, Pagination],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
 			//autoHeight: true,
 			speed: 800,
+			//direction: 'vertical',
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			//preloadImages: false,
+			//lazy: true,
+			/*
+			// Ефекти
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
 
+			// Пагінація
+
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "вліво/вправо"
+			navigation: {
+				prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
+			},
+			/*
+			// Брейкпоінти
+			breakpoints: {
+				640: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+			*/
+			// Події
+			on: {
+
+			}
+		});
+	}
+}
+
+function initSliders2() {
+	// Список слайдерів
+	// Перевіряємо, чи є слайдер на сторінці
+	if (document.querySelector('.swiper2')) { // Вказуємо склас потрібного слайдера
+		// Створюємо слайдер
+		new Swiper('.swiper2', { // Вказуємо склас потрібного слайдера
+			// Підключаємо модулі слайдера
+			// для конкретного випадку
+			modules: [Navigation, Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			//autoHeight: true,
+			speed: 800,
+			//direction: 'vertical',
 			//touchRatio: 0,
 			//simulateTouch: false,
 			//loop: true,
@@ -57,12 +137,11 @@ function initSliders() {
 			*/
 
 			// Пагінація
-			/*
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
-			*/
+
+			// pagination: {
+			// 	el: '.swiper-pagination',
+			// 	clickable: true,
+			// },
 
 			// Скроллбар
 			/*
@@ -138,6 +217,7 @@ function initSlidersScroll() {
 window.addEventListener("load", function (e) {
 	// Запуск ініціалізації слайдерів
 	initSliders();
+	initSliders2();
 	// Запуск ініціалізації скролла на базі слайдера (за класом swiper_scroll)
 	//initSlidersScroll();
 });
