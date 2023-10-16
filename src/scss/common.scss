@@ -12,6 +12,19 @@
 	  }
 	  
 	}
+	
+
+   &__title--black {
+		color: #000;
+      font-family: Urbanist;
+      font-size: toRem(46);
+      font-weight: 900;
+		line-height: 120%;
+		@media (max-width:$mobile){
+			font-size: toRem(28); 
+	  }
+	  
+	}
 
 	&__title--analytics {
 		color: #fff;
@@ -88,6 +101,20 @@
       line-height: 150%; /* 150% */
 		@media (max-width:$mobile){
 			font-size: toRem(18); 
+	  }
+	}
+
+   &__subtitle--view {
+		color: #205BF1;
+      font-family: Urbanist;
+      font-size: toRem(16);
+      font-weight: 700;
+      line-height: 150%; /* 150% */
+		@media (max-width:$mobile){
+			font-size: toRem(18); 
+	  }
+	  &:hover {
+		text-decoration: underline;
 	  }
 	}
 

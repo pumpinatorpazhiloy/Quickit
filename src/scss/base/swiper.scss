@@ -38,6 +38,11 @@
 	display: none !important;
 }
 
+.use-pagination {
+	--swiper-pagination-color: #000;
+	--swiper-pagination-bullet-inactive-color: #000;
+}
+
 @at-root {
 	:root {
 	--swiper-pagination-color: #fff;
